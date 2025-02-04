@@ -1,0 +1,199 @@
+cat api_test.log 
+
+
+============================
+    Authentication Test
+============================
+Request done at '/permissions'
+| username='alice'
+| password='wonderland'
+Expected result = 200
+Actual result = 200
+==> SUCCESS
+
+
+============================
+    Authorization Test
+============================
+Request done at '/v1/sentiment'
+| username='bob'
+| password='builder'
+Expected result = 200
+Actual result = 200
+==> SUCCESS
+
+
+============================
+    Authorization Test
+============================
+Request done at '/v2/sentiment'
+| username='bob'
+| password='builder'
+Expected result = 200
+Actual result = 403
+==> FAILURE
+
+
+============================
+    Authorization Test
+============================
+Request done at '/v1/sentiment'
+| username='alice'
+| password='wonderland'
+Expected result = 200
+Actual result = 200
+==> SUCCESS
+
+
+============================
+    Authorization Test
+============================
+Request done at '/v2/sentiment'
+| username='alice'
+| password='wonderland'
+Expected result = 200
+Actual result = 200
+==> SUCCESS
+
+
+============================
+    Authorization Test
+============================
+Request done at '/v1/sentiment'
+| username='alice'
+| password='wonderland'
+Expected result = 200
+Actual result = 200
+==> SUCCESS
+
+
+============================
+    Authorization Test
+============================
+Request done at '/v2/sentiment'
+| username='alice'
+| password='wonderland'
+Expected result = 200
+Actual result = 200
+==> SUCCESS
+
+
+============================
+    Content Test
+============================
+Request done at '/v1/sentiment'
+| username='alice'
+| sentence='hello shitty world'
+Expected sentiment = negative
+Actual sentiment = negative
+==> SUCCESS
+
+
+============================
+    Content Test
+============================
+Request done at '/v1/sentiment'
+| username='alice'
+| sentence='hello wonderful world'
+Expected sentiment = positive
+Actual sentiment = positive
+==> SUCCESS
+
+
+============================
+    Authentication Test
+============================
+Request done at '/permissions'
+| username='alice'
+| password='wonderland'
+Expected result = 200
+Actual result = 200
+==> SUCCESS
+
+
+============================
+    Authorization Test
+============================
+Request done at '/v1/sentiment'
+| username='bob'
+| password='builder'
+Expected result = 200
+Actual result = 200
+==> SUCCESS
+
+
+============================
+    Content Test
+============================
+Request done at '/v1/sentiment'
+| username='alice'
+| sentence='hello shitty world'
+Expected sentiment = negative
+Actual sentiment = negative
+==> SUCCESS
+
+
+============================
+    Authorization Test
+============================
+Request done at '/v2/sentiment'
+| username='bob'
+| password='builder'
+Expected result = 200
+Actual result = 403
+==> FAILURE
+
+
+============================
+    Content Test
+============================
+Request done at '/v1/sentiment'
+| username='alice'
+| sentence='hello wonderful world'
+Expected sentiment = positive
+Actual sentiment = positive
+==> SUCCESS
+
+
+============================
+    Authorization Test
+============================
+Request done at '/v1/sentiment'
+| username='alice'
+| password='wonderland'
+Expected result = 200
+Actual result = 200
+==> SUCCESS
+
+
+============================
+    Authorization Test
+============================
+Request done at '/v2/sentiment'
+| username='alice'
+| password='wonderland'
+Expected result = 200
+Actual result = 200
+==> SUCCESS
+
+
+============================
+    Authorization Test
+============================
+Request done at '/v1/sentiment'
+| username='alice'
+| password='wonderland'
+Expected result = 200
+Actual result = 200
+==> SUCCESS
+
+
+============================
+    Authorization Test
+============================
+Request done at '/v2/sentiment'
+| username='alice'
+| password='wonderland'
+Expected result = 200
+Actual result = 200
+==> SUCCESS

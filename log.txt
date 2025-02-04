@@ -1,0 +1,129 @@
+Attaching to examdocker_authorization_test_1, examdocker_content_test_1, examdocker_authentication_test_1, examdocker_api_1
+[32m authorization_test_1   |[0m ============================
+[32m authorization_test_1   |[0m     Authorization Test
+[32m authorization_test_1   |[0m ============================
+[32m authorization_test_1   |[0m Request done at '/v1/sentiment'
+[32m authorization_test_1   |[0m | username='bob'
+[32m authorization_test_1   |[0m | password='builder'
+[32m authorization_test_1   |[0m Expected result = 200
+[32m authorization_test_1   |[0m Actual result = 200
+[32m authorization_test_1   |[0m ==> SUCCESS
+[32m authorization_test_1   |[0m Request done at '/v2/sentiment'
+[32m authorization_test_1   |[0m | username='bob'
+[32m authorization_test_1   |[0m | password='builder'
+[32m authorization_test_1   |[0m Expected result = 200
+[32m authorization_test_1   |[0m Actual result = 403
+[32m authorization_test_1   |[0m ==> FAILURE
+[32m authorization_test_1   |[0m Request done at '/v1/sentiment'
+[32m authorization_test_1   |[0m | username='alice'
+[32m authorization_test_1   |[0m | password='wonderland'
+[32m authorization_test_1   |[0m Expected result = 200
+[32m authorization_test_1   |[0m Actual result = 200
+[32m authorization_test_1   |[0m ==> SUCCESS
+[32m authorization_test_1   |[0m Request done at '/v2/sentiment'
+[32m authorization_test_1   |[0m | username='alice'
+[32m authorization_test_1   |[0m | password='wonderland'
+[32m authorization_test_1   |[0m Expected result = 200
+[32m authorization_test_1   |[0m Actual result = 200
+[32m authorization_test_1   |[0m ==> SUCCESS
+[32m authorization_test_1   |[0m Request done at '/v1/sentiment'
+[32m authorization_test_1   |[0m | username='alice'
+[32m authorization_test_1   |[0m | password='wonderland'
+[32m authorization_test_1   |[0m Expected result = 200
+[32m authorization_test_1   |[0m Actual result = 200
+[32m authorization_test_1   |[0m ==> SUCCESS
+[32m authorization_test_1   |[0m Request done at '/v2/sentiment'
+[32m authorization_test_1   |[0m | username='alice'
+[32m authorization_test_1   |[0m | password='wonderland'
+[32m authorization_test_1   |[0m Expected result = 200
+[32m authorization_test_1   |[0m Actual result = 200
+[32m authorization_test_1   |[0m ==> SUCCESS
+[36m api_1                  |[0m INFO:     Started server process [8]
+[36m api_1                  |[0m INFO:     Waiting for application startup.
+[36m api_1                  |[0m INFO:     Application startup complete.
+[36m api_1                  |[0m INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+[36m api_1                  |[0m INFO:     Started server process [8]
+[36m api_1                  |[0m INFO:     Waiting for application startup.
+[36m api_1                  |[0m INFO:     Application startup complete.
+[36m api_1                  |[0m INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+[36m api_1                  |[0m INFO:     172.20.0.1:48324 - "GET /permissions?username=alice&password=wonderland HTTP/1.1" 200 OK
+[36m api_1                  |[0m INFO:     172.20.0.1:50970 - "GET /v1/sentiment?username=bob&password=builder HTTP/1.1" 200 OK
+[36m api_1                  |[0m INFO:     172.20.0.1:50976 - "GET /v2/sentiment?username=bob&password=builder HTTP/1.1" 403 Forbidden
+[36m api_1                  |[0m INFO:     172.20.0.1:50992 - "GET /v1/sentiment?username=alice&password=wonderland HTTP/1.1" 200 OK
+[36m api_1                  |[0m INFO:     172.20.0.1:51006 - "GET /v2/sentiment?username=alice&password=wonderland HTTP/1.1" 200 OK
+[36m api_1                  |[0m INFO:     172.20.0.1:51014 - "GET /v1/sentiment?username=alice&password=wonderland HTTP/1.1" 200 OK
+[36m api_1                  |[0m INFO:     172.20.0.1:51026 - "GET /v2/sentiment?username=alice&password=wonderland HTTP/1.1" 200 OK
+[36m api_1                  |[0m INFO:     172.20.0.1:35862 - "GET /v1/sentiment?username=alice&password=wonderland&sentence=life+is+beautiful HTTP/1.1" 200 OK
+[36m api_1                  |[0m INFO:     172.20.0.1:53252 - "GET /v1/sentiment?username=alice&password=wonderland&sentence=life+is+beautiful HTTP/1.1" 200 OK
+[36m api_1                  |[0m INFO:     172.20.0.1:43388 - "GET /docs HTTP/1.1" 200 OK
+[36m api_1                  |[0m INFO:     172.20.0.1:43388 - "GET /openapi.json HTTP/1.1" 200 OK
+[36m api_1                  |[0m INFO:     172.20.0.1:58916 - "GET /v1/sentiment?username=alice&password=wonderland&sentence=hello%20world HTTP/1.1" 200 OK
+[36m api_1                  |[0m INFO:     172.20.0.1:59672 - "GET /v1/sentiment?username=alice&password=wonderland&sentence=hello%20beatiful%20world HTTP/1.1" 200 OK
+[36m api_1                  |[0m INFO:     172.20.0.1:35846 - "GET /v1/sentiment?username=alice&password=wonderland&sentence=hello%20beautiful%20world HTTP/1.1" 200 OK
+[36m api_1                  |[0m INFO:     172.20.0.1:53538 - "GET /v1/sentiment?username=alice&password=wonderland&sentence=hello%20shitty%20world HTTP/1.1" 200 OK
+[36m api_1                  |[0m INFO:     172.20.0.1:38866 - "GET /v1/sentiment?username=alice&password=wonderland&sentence=hello%20wonderful%20world HTTP/1.1" 200 OK
+[36m api_1                  |[0m INFO:     172.20.0.1:59398 - "GET /v1/sentiment?username=alice&password=wonderland&sentence=hello+shitty+world HTTP/1.1" 200 OK
+[36m api_1                  |[0m INFO:     172.20.0.1:59406 - "GET /v1/sentiment?username=alice&password=wonderland&sentence=hello+wonderful+world HTTP/1.1" 200 OK
+[36m api_1                  |[0m INFO:     Started server process [8]
+[36m api_1                  |[0m INFO:     Waiting for application startup.
+[36m api_1                  |[0m INFO:     Application startup complete.
+[36m api_1                  |[0m INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+[36m api_1                  |[0m INFO:     172.20.0.3:46352 - "GET /v1/sentiment?username=bob&password=builder HTTP/1.1" 200 OK
+[36m api_1                  |[0m INFO:     172.20.0.3:46364 - "GET /v2/sentiment?username=bob&password=builder HTTP/1.1" 403 Forbidden
+[36m api_1                  |[0m INFO:     172.20.0.3:46374 - "GET /v1/sentiment?username=alice&password=wonderland HTTP/1.1" 200 OK
+[36m api_1                  |[0m INFO:     172.20.0.3:46390 - "GET /v2/sentiment?username=alice&password=wonderland HTTP/1.1" 200 OK
+[36m api_1                  |[0m INFO:     172.20.0.3:46394 - "GET /v1/sentiment?username=alice&password=wonderland HTTP/1.1" 200 OK
+[36m api_1                  |[0m INFO:     172.20.0.3:46400 - "GET /v2/sentiment?username=alice&password=wonderland HTTP/1.1" 200 OK
+[36m api_1                  |[0m INFO:     172.20.0.4:46928 - "GET /v1/sentiment?username=alice&password=wonderland&sentence=hello+shitty+world HTTP/1.1" 200 OK
+[36m api_1                  |[0m INFO:     172.20.0.4:46940 - "GET /v1/sentiment?username=alice&password=wonderland&sentence=hello+wonderful+world HTTP/1.1" 200 OK
+[36m api_1                  |[0m INFO:     172.20.0.5:52806 - "GET /permissions?username=alice&password=wonderland HTTP/1.1" 200 OK
+[36m api_1                  |[0m INFO:     Started server process [7]
+[36m api_1                  |[0m INFO:     Waiting for application startup.
+[36m api_1                  |[0m INFO:     Application startup complete.
+[33m authentication_test_1  |[0m ============================
+[35m content_test_1         |[0m ============================
+[35m content_test_1         |[0m     Content Test
+[35m content_test_1         |[0m ============================
+[35m content_test_1         |[0m Request done at '/v1/sentiment'
+[35m content_test_1         |[0m | username='alice'
+[35m content_test_1         |[0m | sentence='hello shitty world'
+[35m content_test_1         |[0m Expected sentiment = negative
+[35m content_test_1         |[0m Actual sentiment = negative
+[33m authentication_test_1  |[0m     Authentication Test
+[35m content_test_1         |[0m ==> SUCCESS
+[36m api_1                  |[0m INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+[33m authentication_test_1  |[0m ============================
+[35m content_test_1         |[0m Request done at '/v1/sentiment'
+[36m api_1                  |[0m INFO:     172.20.0.3:35680 - "GET /v1/sentiment?username=alice&password=wonderland&sentence=hello+shitty+world HTTP/1.1" 200 OK
+[33m authentication_test_1  |[0m Request done at '/permissions'
+[35m content_test_1         |[0m | username='alice'
+[36m api_1                  |[0m INFO:     172.20.0.3:35690 - "GET /v1/sentiment?username=alice&password=wonderland&sentence=hello+wonderful+world HTTP/1.1" 200 OK
+[33m authentication_test_1  |[0m | username='alice'
+[35m content_test_1         |[0m | sentence='hello wonderful world'
+[36m api_1                  |[0m INFO:     172.20.0.4:46234 - "GET /v1/sentiment?username=bob&password=builder HTTP/1.1" 200 OK
+[33m authentication_test_1  |[0m | password='wonderland'
+[35m content_test_1         |[0m Expected sentiment = positive
+[36m api_1                  |[0m INFO:     172.20.0.4:46240 - "GET /v2/sentiment?username=bob&password=builder HTTP/1.1" 403 Forbidden
+[33m authentication_test_1  |[0m Expected result = 200
+[35m content_test_1         |[0m Actual sentiment = positive
+[36m api_1                  |[0m INFO:     172.20.0.4:46248 - "GET /v1/sentiment?username=alice&password=wonderland HTTP/1.1" 200 OK
+[33m authentication_test_1  |[0m Actual result = 200
+[35m content_test_1         |[0m ==> SUCCESS
+[36m api_1                  |[0m INFO:     172.20.0.4:46258 - "GET /v2/sentiment?username=alice&password=wonderland HTTP/1.1" 200 OK
+[33m authentication_test_1  |[0m ==> SUCCESS
+[36m api_1                  |[0m INFO:     172.20.0.4:46274 - "GET /v1/sentiment?username=alice&password=wonderland HTTP/1.1" 200 OK
+[36m api_1                  |[0m INFO:     172.20.0.4:46288 - "GET /v2/sentiment?username=alice&password=wonderland HTTP/1.1" 200 OK
+[36m api_1                  |[0m INFO:     172.20.0.5:55966 - "GET /permissions?username=alice&password=wonderland HTTP/1.1" 200 OK
+[36m api_1                  |[0m INFO:     Started server process [9]
+[36m api_1                  |[0m INFO:     Waiting for application startup.
+[36m api_1                  |[0m INFO:     Application startup complete.
+[36m api_1                  |[0m INFO:     Uvicorn running on http://0.0.0.0:8000 (Press CTRL+C to quit)
+[36m api_1                  |[0m INFO:     172.20.0.3:54346 - "GET /v1/sentiment?username=alice&password=wonderland&sentence=hello+shitty+world HTTP/1.1" 200 OK
+[36m api_1                  |[0m INFO:     172.20.0.3:54350 - "GET /v1/sentiment?username=alice&password=wonderland&sentence=hello+wonderful+world HTTP/1.1" 200 OK
+[36m api_1                  |[0m INFO:     172.20.0.5:37828 - "GET /permissions?username=alice&password=wonderland HTTP/1.1" 200 OK
+[36m api_1                  |[0m INFO:     172.20.0.4:35704 - "GET /v1/sentiment?username=bob&password=builder HTTP/1.1" 200 OK
+[36m api_1                  |[0m INFO:     172.20.0.4:35708 - "GET /v2/sentiment?username=bob&password=builder HTTP/1.1" 403 Forbidden
+[36m api_1                  |[0m INFO:     172.20.0.4:35722 - "GET /v1/sentiment?username=alice&password=wonderland HTTP/1.1" 200 OK
+[36m api_1                  |[0m INFO:     172.20.0.4:35728 - "GET /v2/sentiment?username=alice&password=wonderland HTTP/1.1" 200 OK
+[36m api_1                  |[0m INFO:     172.20.0.4:35730 - "GET /v1/sentiment?username=alice&password=wonderland HTTP/1.1" 200 OK
+[36m api_1                  |[0m INFO:     172.20.0.4:35732 - "GET /v2/sentiment?username=alice&password=wonderland HTTP/1.1" 200 OK

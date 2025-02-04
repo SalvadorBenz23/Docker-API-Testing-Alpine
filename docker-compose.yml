@@ -1,0 +1,41 @@
+version: '3'
+
+services:
+  api:
+    image: datascientest/fastapi:1.0.0
+    ports:
+      - "8000:8000"
+
+  authentication_test:
+    image: authentication_test
+    depends_on:
+      - api
+    environment:
+      - API_ADDRESS=api
+      - API_PORT=8000
+    volumes:
+      - api_test:/app
+
+  authorization_test:
+    image: authorization_test
+    depends_on:
+      - api
+    environment:
+      - API_ADDRESS=api
+      - API_PORT=8000
+    volumes:
+      - api_test:/app
+
+  content_test:
+    image: content_test
+    depends_on:
+      - api
+    environment:
+      - API_ADDRESS=api
+      - API_PORT=8000
+    volumes:
+      - api_test:/app
+
+volumes:
+  api_test:
+    external: true
